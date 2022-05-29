@@ -20,6 +20,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
 
+
 import os
 import re
 
@@ -42,8 +43,8 @@ def load_data(dataset_name, splits_file_path=None, train_percentage=None, val_pe
         features = features.todense()
         G = nx.DiGraph(adj)
     else:
-        graph_adjacency_list_file_path = os.path.join('/content/drive/MyDrive/RWR-GAE/gae/data', dataset_name, 'out1_graph_edges.txt')
-        graph_node_features_and_labels_file_path = os.path.join('/content/drive/MyDrive/RWR-GAE/gae/data', dataset_name,
+        graph_adjacency_list_file_path = os.path.join('/gae/data', dataset_name, 'out1_graph_edges.txt')
+        graph_node_features_and_labels_file_path = os.path.join('/gae/data', dataset_name,
                                                                 f'out1_node_feature_label.txt')
 
         G = nx.DiGraph()
