@@ -29,7 +29,7 @@ from torch.autograd import Variable
 import utils_data
 import wandb
 
-wandb.init(project='texas')
+# wandb.init(project='texas')
 
 def purity_score(y_true, y_pred):
     """Purity score
@@ -78,7 +78,7 @@ parser.add_argument('--n-clusters', default=7, type=int, help='number of cluster
 parser.add_argument('--plot', type=int, default=0, help="whether to plot the clusters using tsne")
 args = parser.parse_args()
 
-from utils import load_npz
+# from utils import load_npz
 def preprocess_high_order_adj( adj, order, eps ):
     adj = row_normalize_adj( adj )
 
@@ -298,8 +298,8 @@ def gae_for(args):
         #         ap_curr, time.time() - t))
         roc_score, ap_score = get_roc_score(hidden_emb, adj_orig, test_edges, test_edges_false)
         # # tqdm.write('ROC: {}, AP: {}'.format(roc_score, ap_score))
-        wandb.log({"roc_score1": roc_score})
-        wandb.log({"ap_score1": ap_score})
+        # wandb.log({"roc_score1": roc_score})
+        # wandb.log({"ap_score1": ap_score})
         if (epoch + 1) % 10 == 0:
             tqdm.write("Evaluating intermediate results...")
             kmeans = KMeans(n_clusters=args.n_clusters, random_state=0).fit(hidden_emb)
