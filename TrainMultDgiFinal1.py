@@ -208,7 +208,7 @@ def gae_for(args):
         KLD_QX_PX=loss_function(preds=model.dc(z_x), labels=adj_label,
                              mu=(mu_x1 - mu_px), logvar=(logvar_px - logvar_x1), n_nodes=n_nodes,
                              norm=norm, pos_weight=pos_weight)
-        KLD_QX_PX = KLD_QX_PX = KLD_QX_PX.expand(n_nodes, 1, args.hidden2)
+        KLD_QX_PX = KLD_QX_PX.expand(n_nodes, 1, args.hidden2)
         E_KLD_QX_PX = torch.sum(torch.bmm(KLD_QX_PX, qz.unsqueeze(-1)/n_nodes))
         # print(E_KLD_QX_PX)
         # print(model.dc(z_x).shape,adj_label.shape,"hdhhhhhhd")
