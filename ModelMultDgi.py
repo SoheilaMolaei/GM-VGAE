@@ -60,11 +60,11 @@ class GCNModelVAE(nn.Module):
       batchSize = x.size(0)
       mu_x, logvar_x,mu_w, logvar_w,hidden1 = self.encode(x, adj)
 
-      z_x = self.reparameterize(mu_x, logvar_x)#X maqaleh
+      z_x = self.reparameterize(mu_x, logvar_x)#X 
       z_w = self.reparameterize(mu_w, logvar_w)
       mu_px, logvar_px = self.priorGenerator(z_w,adj,batchSize)
 
-      qz = F.softmax(self.qz(hidden1,adj), dim=1)#Z maqaleh
+      qz = F.softmax(self.qz(hidden1,adj), dim=1)#Z 
 
       return z_x, mu_x, logvar_x,z_w, mu_w, logvar_w,mu_px, logvar_px,qz
 
