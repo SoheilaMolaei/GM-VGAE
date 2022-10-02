@@ -16,7 +16,7 @@ torch.manual_seed(SEED)
 from torch import optim
 import torch.nn.functional as F
 from ModelMultDgi import GCNModelVAE, GCNModelAE
-from optimizer import loss_function,loss_functionP,loss_functionShuffle
+from optimizer import loss_function
 from utils import load_data, mask_test_edges, preprocess_graph, get_roc_score
 from graph import load_edgelist_from_csr_matrix, build_deepwalk_corpus_iter, build_deepwalk_corpus
 from skipGram import SkipGram
